@@ -1,0 +1,4 @@
+let mapleader = ","
+
+" Getting CTags from the gem directory and current Rails directory
+map <Leader>rt :!ctags --extra=+f --exclude=.git --exclude=log -R * `bundle show rails`/../*<CR><CR>
