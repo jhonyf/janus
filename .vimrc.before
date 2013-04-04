@@ -1,0 +1,29 @@
+let mapleader = ","
+
+" Getting CTags from the gem directory and current Rails directory
+map <Leader>rt :!ctags --extra=+f --exclude=.git --exclude=log -R * `bundle show rails`/../*<CR><CR>
+
+" Use Node.js for JavaScript interpretation
+let $JS_CMD='node'
+
+" Highlights trailing whitespace
+" match Todo /\s\+$/
+
+" Zoomwin
+map <Leader><Leader> :ZoomWin<CR>
+
+" Treats hamlc file as haml type for highlighting purpose
+au BufRead,BufNewFile *.hamlc set ft=haml
+
+" Spell
+set spell
+
+" Ignore certail files
+set wildignore+=*/tmp/*,*.so,*.swp
+
+" Sane Ignore For ctrlp
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp$',
+  \ 'file': '\.exe$\|\.so$\|\.dat$'
+  \ }
+
