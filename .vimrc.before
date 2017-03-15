@@ -12,6 +12,12 @@ let $JS_CMD='node'
 " Zoomwin
 map <Leader><Leader> :ZoomWin<CR>
 
+" Autoclose nerdtree
+let NERDTreeQuitOnOpen = 0
+
+" Nerdtree link to file
+map <Leader>nl :NERDTreeFind<CR>
+
 " Treats hamlc file as haml type for highlighting purpose
 au BufRead,BufNewFile *.hamlc set ft=haml
 
@@ -21,9 +27,11 @@ set spell
 " Ignore certail files
 set wildignore+=*/tmp/*,*.so,*.swp
 
+" Ignore .git working directory
+let g:ctrlp_working_path_mode = 'a'
+
 " Sane Ignore For ctrlp
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp$',
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|target\|tmp$',
   \ 'file': '\.exe$\|\.so$\|\.dat$'
   \ }
-
